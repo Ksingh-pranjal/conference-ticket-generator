@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Ticket Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <main class="container">
+
+        <!--Logo-->
+        <header class="site-header">
+            <img src="assets/images/logo-full.svg" alt="Conference logo" class="site-logo">
+        </header>
+
+        <!--Title section-->
+        <section class="intro-section">
+            <h1>Your Journey to coding Conf 2025 Starts Here!</h1>
+            <p>Secure your spot at next year's biggest coding conference</p>
+        </section>
+
+        <!--Form Section-->
+        <section class="form-section">
+            <form id="ticketForm" novalidate>
+                <div class="form-group avatar-upload">
+                    <label for="avatar">Upload Avatar</label>
+                    <div class="avatar-dropbox">
+                        <input type="file" id="avatar" name="avatar" accept="image/png,image/jpeg">
+                        <img src="assets/images/icon-upload.svg" alt="Upload icon" class="upload-icon">
+                        <span>Drag and drop or click to upload</span>
+                    </div>
+                    <small>
+                        <img src="assets/images/icon-info.svg" alt="Info Icon" class="info-icon">
+                        Upload your photo (JPG or PNG, max size: 500KB).
+                    </small>
+                    <small class="error" id="avatarError"></small>
+                </div>   
+
+                <div class="form-group">    
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" aria-describedby="nameError" required> 
+                    <small class="error" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required> 
+                    <small class="error" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="github">Github Username</label>
+                    <input type="text" id="github" name="github" placeholder="@yourusername" required> 
+                    <small class="error" id="githubError"></small>
+                </div>
+
+               
+
+                <button type="submit" class="generate-btn">Generate My Ticket</button>
+            </form>
+        </section>
+
+        <!--Ticket Output (hidden by default)-->
+        <section class="ticket-section" id="ticketsection" hidden>
+            <div class="ticket">
+                <img src="assets/images/pattern-ticket.svg" alt="Ticket Background" class="ticket-bg">
+                <div class="ticket-content">
+                    <img src="assets/images/image-avatar.jpg" alt="Avatar" id="ticketAvatar" class="ticket-avatar">
+                    <div class="ticket-details">
+                        <h2 id="ticketName">---</h2>
+                        <p id="ticketEmail">---</p>
+                        <p id="ticketGithub">---</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
